@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Staff Info</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to right, #dff1ff, #fdfbfb);
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Logout Button */
+    .logout-btn {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .logout-btn button {
+      padding:5px 10px;
+      border:none;
+      border-radius:5px;
+      background:#1d3557;
+      color:white;
+      cursor:pointer;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box;
+    }
+
+    h2 { text-align: center; color: #1d3557; margin-bottom: 20px; }
+
+    .row { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    .info, .materials {
+      flex: 1;
+      min-width: 250px;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }
+
+    .info img {
+      display: block;
+      margin: 0 auto 15px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #1d3557;
+    }
+
+    p { margin: 6px 0; color: #333; font-size: 14px; }
+    b { color: #1d3557; }
+
+    ul { padding-left: 20px; margin: 0; }
+    a { text-decoration: none; color: #1d3557; }
+    a:hover { text-decoration: underline; }
+
+    .events {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0f7ff;
+      border-left: 5px solid #1d3557;
+      border-radius: 10px;
+    }
+
+    .events h3 { margin-bottom: 10px; color: #1d3557; }
+
+    @media (max-width: 700px) {
+      .row { flex-direction: column; }
+      .info, .materials { min-width: 100%; }
+      .info img { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="logout-btn">
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+  <h2>Staff Information</h2>
+  <div class="row">
+    <!-- Info Box -->
+    <div class="info">
+      <img src="media/raj.jpeg" alt="staff">
+      <p><b>Name:</b> Raj.Y</p>
+      <p><b>Reg No:</b> 107</p>
+      <p><b>Designation:</b> Lecturer</p>
+      <p><b>Department:</b> Computer Science</p>
+      <p><b>Phone:</b> 9500000001</p>
+      <p><b>Email:</b> yraj@college.com</p>
+    </div>
+
+    <!-- Study Materials -->
+    <div class="materials">
+      <h3>Study Materials</h3>
+      <ul>
+        <li><a href="materials/ds.pdf" target="_blank">Data Structures Notes</a></li>
+        <li><a href="materials/cppt.pdf" target="_blank">C Programming Slides</a></li>
+        <li><a href="materials/java.pdf" target="_blank">Java Programming Guide</a></li>
+        <li><a href="materials/os.pdf" target="_blank">Operating System Notes</a></li>
+        <li><a href="materials/dbms.pdf" target="_blank">Database Management System</a></li>
+        <li><a href="materials/network.pdf" target="_blank">Computer Networks Reference</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Events / Upcoming -->
+  <div class="events">
+    <h3>Upcoming Events</h3>
+    <ul>
+      <li>Guest Lecture on AI – Sept 12, 2025</li>
+      <li>Workshop: Cybersecurity Basics – Sept 20, 2025</li>
+      <li>Department Fest – Oct 5, 2025</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+function logout() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

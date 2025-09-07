@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Academic Record</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to right, #dff1ff, #fdfbfb);
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Logout Button */
+    .logout-btn {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .logout-btn button {
+      padding:5px 10px;
+      border:none;
+      border-radius:5px;
+      background:#1d3557;
+      color:white;
+      cursor:pointer;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Left Column - Student Info */
+    .left-column {
+      flex: 0 0 300px;
+    }
+
+    /* Right Column - Attendance, Payment, Marks */
+    .right-column {
+      flex: 1;
+      min-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      line-height: 25px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 15px;
+    }
+
+    .profile-pic {
+      display: block;
+      margin: 50px auto;
+      width: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #1d3557;
+    }
+
+    p { margin: 6px 0; font-size: 15px; color: #333; }
+    p b { color: #1d3557; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td { border: 1px solid #1d3557; }
+    th, td { padding: 8px; text-align: center; font-size: 14px; }
+    th { background-color: #1d3557; color: white; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container { flex-direction: column; align-items: center; }
+      .left-column, .right-column { flex: 1 1 100%; }
+      .profile-pic { width: 120px; }
+      table, th, td { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Logout button -->
+<div class="logout-btn">
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+  <!-- Student Info -->
+  <div class="left-column">
+    <div class="card">
+      <h2>Student Information</h2>
+      <img src="media/kavya.jpeg" alt="student" class="profile-pic">
+      <p><b>Name:</b> Kavya</p>
+      <p><b>Reg No:</b> 1231</p>
+      <p><b>Age:</b> 20</p>
+      <p><b>Batch:</b> B2</p>
+      <p><b>Department:</b> Electrical</p>
+      <p><b>Section:</b> A</p>
+      <p><b>Date of Birth:</b> 03-06-2004</p>
+      <p><b>Father's Name:</b> Murali</p>
+      <p><b>Father's Occupation:</b> Business</p>
+      <p><b>Mother's Name:</b> Umavathi</p>
+      <p><b>Mother's Occupation:</b> Nurse</p>
+      <p><b>Religion:</b> Hindu</p>
+      <p><b>Weight:</b> 52 kg</p>
+      <p><b>Height:</b> 5'3"</p>
+      <p><b>Blood Group:</b> A+</p>
+      <p><b>Address:</b> 70, YK Road, Hyderabad</p>
+      <p><b>Phone:</b> 95xxxxxxxx</p>
+    </div>
+  </div>
+
+  <!-- Right Column: Attendance, Payment, Marks -->
+  <div class="right-column">
+    
+    <!-- Attendance -->
+    <div class="card">
+      <h2>Attendance Sheet</h2>
+      <table>
+        <tr>
+          <th>Academic Year</th>
+          <th>Semester</th>
+          <th>Total Classes</th>
+          <th>Classes Attended</th>
+          <th>Attendance %</th>
+        </tr>
+        <tr>
+          <td>2023-2024</td>
+          <td>1</td>
+          <td>60</td>
+          <td>45</td>
+          <td>75%</td>
+        </tr>
+        <tr>
+          <td>2023-2024</td>
+          <td>2</td>
+          <td>55</td>
+          <td>42</td>
+          <td>76%</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Tuition Payment -->
+    <div class="card">
+      <h2>Tuition Payment Status</h2>
+      <table>
+        <tr>
+          <th>Academic Year</th>
+          <th>Semester</th>
+          <th>Payment Status</th>
+        </tr>
+        <tr>
+          <td>2023-2024</td>
+          <td>1, 2</td>
+          <td>Paid</td>
+        </tr>
+        <tr>
+          <td>2024-2025</td>
+          <td>3, 4</td>
+          <td>Yet to Pay</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Semester 1 Marks -->
+    <div class="card">
+      <h2>Semester 1 Marksheet</h2>
+      <table>
+        <tr>
+          <th>Subject</th>
+          <th>Marks Obtained</th>
+          <th>Total Marks</th>
+          <th>Pass/Fail</th>
+        </tr>
+        <tr>
+          <td>Electrical Circuits</td>
+          <td>75</td>
+          <td>100</td>
+          <td>Pass</td>
+        </tr>
+        <tr>
+          <td>Mathematics I</td>
+          <td>68</td>
+          <td>100</td>
+          <td>Pass</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Semester 2 Marks -->
+    <div class="card">
+      <h2>Semester 2 Marksheet</h2>
+      <table>
+        <tr>
+          <th>Subject</th>
+          <th>Marks Obtained</th>
+          <th>Total Marks</th>
+          <th>Pass/Fail</th>
+        </tr>
+        <tr>
+          <td>Electrical Machines I</td>
+          <td>72</td>
+          <td>100</td>
+          <td>Pass</td>
+        </tr>
+        <tr>
+          <td>Mathematics II</td>
+          <td>65</td>
+          <td>100</td>
+          <td>Pass</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function logout() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
